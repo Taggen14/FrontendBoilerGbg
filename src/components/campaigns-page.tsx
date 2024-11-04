@@ -49,7 +49,7 @@ export function CampaignsPageComponent() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:1337/campaign", {
+      const response = await axios.post("https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/campaign", {
         ...formData,
         createdAtDate: todaysDate,
         userId: "32459cc8-a06a-47a4-8133-af0ec0cfa609", // test hårdkodad userId ska fixas med autenticering
@@ -66,7 +66,7 @@ export function CampaignsPageComponent() {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await axios.get("http://localhost:1337/campaign");
+        const response = await axios.get("https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/campaign");
         setCampaigns(response.data);
         console.log(campaigns, "campaigns");
       } catch (error) {

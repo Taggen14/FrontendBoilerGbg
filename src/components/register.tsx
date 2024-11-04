@@ -16,7 +16,7 @@ export function Register() {
     e.preventDefault();
 
     if(repeatPassword !== password) return alert('passwords do not match')
-    fetch("http://localhost:1337/users/", {
+    fetch("https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/users/", {
       method: "POST",
       headers: {
         Accept: "application/json",

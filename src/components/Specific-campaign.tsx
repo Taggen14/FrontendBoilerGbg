@@ -24,7 +24,7 @@ export function SpecificCampaign() {
     const fetchCampaignDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1337/campaign/${id}`
+          `https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/campaign/${id}`
         );
         setCampaign(response.data);
       } catch (error) {

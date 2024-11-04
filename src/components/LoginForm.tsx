@@ -12,7 +12,7 @@ import { AuthContext } from "@/context/context";
 // fixa denna till en riktig fetch med fetch eller axios?
 const handleGithubLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "http://localhost:1337/auth/github";
+    window.location.href = "https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/auth/github";
 };
 
 export const LoginForm = () => {
@@ -26,7 +26,7 @@ export const LoginForm = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:1337/auth/login",
+                "https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/auth/login",
                 {
                     email,
                     password,
