@@ -1,3 +1,6 @@
+# PROJECT URL
+https://main.d2zbjg7v8bstm4.amplifyapp.com
+
 # SETUP FOR TESTING
 1. Navigera dig fram till frontend mappen och gör en "npm i"
 2. gör en "npm i" i backend mappen också
