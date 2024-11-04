@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ImageIcon } from "lucide-react";
+import backendBaseUrl from "./ui/backendBaseUrl";
 
 export function Register() {
   const [fullName, setFullName] = useState("");
@@ -16,7 +17,7 @@ export function Register() {
     e.preventDefault();
 
     if(repeatPassword !== password) return alert('passwords do not match')
-    fetch("https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/users/", {
+    fetch(`${backendBaseUrl}/users/`, {
       method: "POST",
       headers: {
         Accept: "application/json",

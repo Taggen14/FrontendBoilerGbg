@@ -14,6 +14,7 @@ import { Campaign } from "./campaigns-page";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import backendBaseUrl from "./ui/backendBaseUrl";
 
 export function SpecificCampaign() {
   const [campaign, setCampaign] = useState<Campaign | null>(null);
@@ -24,7 +25,7 @@ export function SpecificCampaign() {
     const fetchCampaignDetails = async () => {
       try {
         const response = await axios.get(
-          `https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/campaign/${id}`
+          `${backendBaseUrl}/campaign/${id}`
         );
         setCampaign(response.data);
       } catch (error) {

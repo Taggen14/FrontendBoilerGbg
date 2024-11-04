@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { PlusCircle, Calendar, Mail } from "lucide-react";
 import axios from "axios";
 import { todaysDate } from "@/utils/todaysDate";
+import backendBaseUrl from "./ui/backendBaseUrl";
 
 export interface Campaign {
   companyName: string;
@@ -49,7 +50,7 @@ export function CampaignsPageComponent() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/campaign", {
+      const response = await axios.post(`/${backendBaseUrl}campaign`, {
         ...formData,
         createdAtDate: todaysDate,
         userId: "32459cc8-a06a-47a4-8133-af0ec0cfa609", // test hårdkodad userId ska fixas med autenticering
@@ -66,7 +67,7 @@ export function CampaignsPageComponent() {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await axios.get("https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/campaign");
+        const response = await axios.get(`${backendBaseUrl}/campaign`);
         setCampaigns(response.data);
         console.log(campaigns, "campaigns");
       } catch (error) {

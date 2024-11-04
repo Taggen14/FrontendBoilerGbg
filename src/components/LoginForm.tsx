@@ -8,11 +8,12 @@ import axios from 'axios';
 import { LockIcon, MailIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "@/context/context";
+import backendBaseUrl from "./ui/backendBaseUrl";
 
 // fixa denna till en riktig fetch med fetch eller axios?
 const handleGithubLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/auth/github";
+    window.location.href = `${backendBaseUrl}/auth/github`;
 };
 
 export const LoginForm = () => {
@@ -26,7 +27,7 @@ export const LoginForm = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "https://backend-boiler-gbg.vercel.app/?vercelToolbarCode=f1t9PJvXJCYC0pM/auth/login",
+                `${backendBaseUrl}/auth/login`,
                 {
                     email,
                     password,
